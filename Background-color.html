@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="change-color-btn">Change Background Color</button>
+    <button id="back-btn">Previous Bckground Color</button>
+  </body>
+  <script>
+    const colors = ['lightblue', 'lightgreen', 'lightpink', 'lightyellow'];
+    let colorIndex = 0;
+    let prevColor = '';
+    
+    const button = document.getElementById('change-color-btn');
+    button.addEventListener('click', function() {
+      prevColor = document.body.style.backgroundColor;
+      document.body.style.backgroundColor = colors[colorIndex];
+      colorIndex = (colorIndex + 1) % colors.length;
+    });
+
+    const backButton = document.getElementById('back-btn');
+    backButton.addEventListener('click', function() {
+      document.body.style.backgroundColor = prevColor;
+    });
+  </script>
+</html>

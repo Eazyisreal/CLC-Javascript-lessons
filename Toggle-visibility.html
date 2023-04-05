@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="toggle-btn">Toggle Element</button>
+    <div id="my-div">This element will be hidden/show on button click</div>
+  </body>
+  <script>
+    const button = document.getElementById("toggle-btn");
+    const div = document.getElementById("my-div");
+    button.addEventListener("click", function () {
+      if (div.style.display === "none") {
+        div.style.display = "block";
+      } else {
+        div.style.display = "none";
+      }
+    });
+  </script>
+</html>
