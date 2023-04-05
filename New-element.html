@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="add-element-btn">Add Element</button>
+    <button id="remove-element-btn">Remove Elements</button>
+    <div id="my-div"></div>
+  </body>
+  <script>
+    const addButton = document.getElementById("add-element-btn");
+    const removeButton = document.getElementById("remove-element-btn");
+    const div = document.getElementById("my-div");
+    let elements = [];
+
+    addButton.addEventListener("click", function () {
+      const newElement = document.createElement("p");
+      newElement.textContent = "This is a new paragraph!";
+      div.appendChild(newElement);
+      elements.push(newElement);
+    });
+
+    removeButton.addEventListener("click", function () {
+      const lastElement = elements.pop();
+      if (lastElement) {
+        div.removeChild(lastElement);
+      }
+    });
+  </script>
+</html>
